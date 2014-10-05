@@ -16,18 +16,21 @@ namespace eSchedule.Entities
 
 
        public int EmployeeID { get; set; }
+       // [Required(ErrorMessage = "FirstName is required")]
+       // [Range(1, 50, ErrorMessage = "FirstName length must be between 1 and 50")]
        [Required, StringLength(50)]
        public string FirstName { get; set; }
-      // [Required(ErrorMessage = "FirstName is required")]
-      // [Range(1, 50, ErrorMessage = "FirstName length must be between 1 and 50")]
+       //[Required(ErrorMessage = "LastName is required")]
+       // [Range(1, 50, ErrorMessage = "LastName length must be between 1 and 50")]
         [Required, StringLength(50)]
        public string LastName { get; set; }
-       //[Required(ErrorMessage = "LastName is required")]
-      // [Range(1, 50, ErrorMessage = "LastName length must be between 1 and 50")]
+        //[Required(ErrorMessage = "HomePhone is required")]
+        // [Range(1, 12, ErrorMessage = "HomePhone length must be between 1 and 12")]
         [Required, StringLength(12)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
+         ErrorMessage = "Personal phone format is not valid.")]
        public string HomePhone { get; set; }
-       //[Required(ErrorMessage = "HomePhone is required")]
-      // [Range(1, 12, ErrorMessage = "HomePhone length must be between 1 and 12")]
+       
        public bool Active { get; set; }
 
 
