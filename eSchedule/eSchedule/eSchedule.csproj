@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\ScheduleAdminController.cs" />
     <Compile Include="DAL\ScheduleContext..cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\EmployeeLocation.cs" />
@@ -55,7 +54,9 @@
     <Compile Include="Entities\Shift.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BLL\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
