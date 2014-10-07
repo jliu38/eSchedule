@@ -11,12 +11,16 @@ namespace eSchedule.Entities
     public class Schedule
     {
         [Key]
+        [Required(ErrorMessage = "ScheduleID is required")]
         public int ScheduleID { get; set; }
         
         [Column(Order = 1)]
+        [Required(ErrorMessage = "ScheduleID is required")]
         public int EmployeeID { get; set; }
+        [Required(ErrorMessage = "LocationID is required")]
         public int LocationID { get; set; }
       [Column(Order = 2)]
+      [Required(ErrorMessage = "ShiftID is required")]
         public int ShiftID { get; set; }
         
         public DateTime Day { get; set; }

@@ -11,9 +11,11 @@ namespace eSchedule.Entities
    public class EmployeeLocation
    {
        [Key, Column(Order = 1)]
+       [Required(ErrorMessage = "EmployeeID is required")]
        public int EmployeeID { get; set; }
        [Key]
        [Column(Order = 2)]
+       [Required(ErrorMessage = "LocationID is required")]
        public int LocationID { get; set; }
 
 
