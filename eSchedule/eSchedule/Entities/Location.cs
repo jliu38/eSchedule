@@ -30,8 +30,8 @@ namespace eSchedule.Entities
         public string Province { get; set; }
         [Required(ErrorMessage = "Phonenumber is required")]
         // [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
-        [RegularExpression(@"[1-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9][0-9]",
-         ErrorMessage = "Personal phone format is not valid.")]
+        //[RegularExpression(@"[1-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9][0-9]",
+        // ErrorMessage = "Personal phone format is not valid.")]
         public string Phone { get; set; }
         
         public bool Active { get; set; }
