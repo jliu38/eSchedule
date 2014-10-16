@@ -11,4 +11,8 @@ public partial class GeneralAdmin_Manage_Locations : System.Web.UI.Page
     {
 
     }
+    protected void HandleCRUDErrors(object sender, ObjectDataSourceStatusEventArgs e)
+    {
+        LocationsWebUserControl.HandleDataBoundException(e);
+    }
 }

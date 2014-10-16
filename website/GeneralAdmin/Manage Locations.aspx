@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Manage Locations.aspx.cs" Inherits="GeneralAdmin_Manage_Locations" %>
 
+<%@ Register Src="~/UserControlls/LocationsWebUserControl.ascx" TagPrefix="uc1" TagName="LocationsWebUserControl" %>
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <h1>Manage Locations</h1>
     <asp:ListView ID="ListView1" runat="server" DataSourceID="LocationODS" InsertItemPosition="FirstItem">
@@ -154,7 +158,7 @@
             </tr>
         </SelectedItemTemplate>
     </asp:ListView>
-    
+    <uc1:LocationsWebUserControl runat="server" ID="LocationsWebUserControl" />
     <asp:ObjectDataSource ID="LocationODS" runat="server" DataObjectTypeName="eSchedule.Entities.Location" InsertMethod="AddLocation" OldValuesParameterFormatString="original_{0}" SelectMethod="ListAllLocationss" TypeName="eSchedule.BLL.ScheduleControll" UpdateMethod="UpdateLocation"></asp:ObjectDataSource>
     
 </asp:Content>
