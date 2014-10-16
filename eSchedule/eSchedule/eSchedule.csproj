@@ -46,17 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ScheduleControll.cs" />
     <Compile Include="DAL\ScheduleContext..cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\EmployeeLocation.cs" />
+    <Compile Include="Entities\EmployeeSkill.cs" />
     <Compile Include="Entities\Location.cs" />
+    <Compile Include="Entities\PlacementContract.cs" />
     <Compile Include="Entities\Schedule.cs" />
     <Compile Include="Entities\Shift.cs" />
+    <Compile Include="Entities\Skill.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

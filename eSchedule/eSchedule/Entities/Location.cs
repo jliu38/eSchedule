@@ -28,7 +28,8 @@ namespace eSchedule.Entities
         [Required(ErrorMessage = "Province is required")]
         [StringLength(2, MinimumLength = 2, ErrorMessage = "Province length must be  2")]
         public string Province { get; set; }
-        [Required(ErrorMessage = "Phonenumber is required")]
+        [Required(ErrorMessage = "HomePhone is required")]
+        [StringLength(12, MinimumLength = 12, ErrorMessage = "HomePhone length must be 12")]
         // [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
         //[RegularExpression(@"[1-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9][0-9]",
         // ErrorMessage = "Personal phone format is not valid.")]
@@ -37,8 +38,8 @@ namespace eSchedule.Entities
         public bool Active { get; set; }
 
 
-        public virtual ICollection<EmployeeLocation> EmployeeLocation { get; set; }
-        public virtual ICollection<Shift> Shift { get; set; }
+        public virtual ICollection<PlacementContract> PlacementContract { get; set; }
+       
     }
 }
 

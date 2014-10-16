@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="eSchedule"  description="eSchedule">
+    <siteMapNode url="~/Default.aspx" title="Home"  description="eSchedule - Simple-Tasty-Elegant" />
+    
+    <siteMapNode title="Admin"  description="Managerial Services">
+      <siteMapNode url="~/Admin/Manage Locations.aspx" title="Manage Locations"  description="Manage Locations for Schedule" />
+      
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
