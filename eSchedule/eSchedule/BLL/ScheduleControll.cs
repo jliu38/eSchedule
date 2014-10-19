@@ -3,6 +3,7 @@ using eSchedule.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,22 @@ namespace eSchedule.BLL
                 var attached = context.Locations.Attach(item);
                 var matchingWithExistingValues = context.Entry<Location>(attached);
                 matchingWithExistingValues.State = System.Data.Entity.EntityState.Modified;
-                context.SaveChanges();
+                try
+                { context.SaveChanges(); }
+                catch (DbEntityValidationException ex)
+                { StringBuilder sl = new StringBuilder();
+                foreach (var failure in ex.EntityValidationErrors)
+                {
+                    sl.AppendFormat("{0} failed validation\n", failure.Entry.Entity.GetType());
+                    foreach (var error in failure.ValidationErrors)
+                    {
+                        sl.AppendFormat("- {0} : {1}", error.PropertyName, error.ErrorMessage);
+                        sl.AppendLine();
+                    }
+                }
+                throw new DbEntityValidationException(
+                    "Entity Validation Failed - errors follow:\n" + sl.ToString(),ex);
+                }
 
             }
         }

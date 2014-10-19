@@ -28,11 +28,10 @@ namespace eSchedule.Entities
         [Required(ErrorMessage = "Province is required")]
         [StringLength(2, MinimumLength = 2, ErrorMessage = "Province length must be  2")]
         public string Province { get; set; }
+       [StringLength(50, MinimumLength = 0, ErrorMessage = "Contact length must be between 0 and 50")]
+        public string Contact { get; set; }
         [Required(ErrorMessage = "HomePhone is required")]
         [StringLength(12, MinimumLength = 12, ErrorMessage = "HomePhone length must be 12")]
-        // [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
-        //[RegularExpression(@"[1-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9][0-9]",
-        // ErrorMessage = "Personal phone format is not valid.")]
         public string Phone { get; set; }
         
         public bool Active { get; set; }
