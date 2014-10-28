@@ -37,36 +37,39 @@ namespace eSchedule.BLL
                 var attached = context.Locations.Attach(item);
                 var matchingWithExistingValues = context.Entry<Location>(attached);
                 matchingWithExistingValues.State = System.Data.Entity.EntityState.Modified;
-                try
-                { context.SaveChanges(); }
-                catch (DbEntityValidationException ex)
-                { StringBuilder sl = new StringBuilder();
-                foreach (var failure in ex.EntityValidationErrors)
-                {
-                    sl.AppendFormat("{0} failed validation\n", failure.Entry.Entity.GetType());
-                    foreach (var error in failure.ValidationErrors)
-                    {
-                        sl.AppendFormat("- {0} : {1}", error.PropertyName, error.ErrorMessage);
-                        sl.AppendLine();
-                    }
-                }
-                throw new DbEntityValidationException(
-                    "Entity Validation Failed - errors follow:\n" + sl.ToString(),ex);
-                }
+                context.SaveChanges();
+                //try
+                //{ context.SaveChanges(); }
+                //catch (DbEntityValidationException ex)
+                //{ StringBuilder sl = new StringBuilder();
+                //foreach (var failure in ex.EntityValidationErrors)
+                //{
+                //    sl.AppendFormat("{0} failed validation\n", failure.Entry.Entity.GetType());
+                //    foreach (var error in failure.ValidationErrors)
+                //    {
+                //        sl.AppendFormat("- {0} : {1}", error.PropertyName, error.ErrorMessage);
+                //        sl.AppendLine();
+                //    }
+                //}
+                //throw new DbEntityValidationException(
+                //    "Entity Validation Failed - errors follow:\n" + sl.ToString(),ex);
+                //}
 
             }
         }
-        //[DataObjectMethod(DataObjectMethodType.Delete, false)]
-        //public void DeleteLocation(Location item)
-        //{
-        //   using (ScheduleContext context = new ScheduleContext())
-        //    {
-        //        var existing = context.Locations.Find(item. LocationID);
-        //        context.Locations.Remove(existing);
-        //        context.SaveChanges();
-        //    }
-        //}
+        [DataObjectMethod(DataObjectMethodType.Delete, false)]
+        public void DeleteLocation(Location item)
+        {
+            using (ScheduleContext context = new ScheduleContext())
+            {
+                var existing = context.Locations.Find(item.LocationID);
+                context.Locations.Remove(existing);
+                context.SaveChanges();
+            }
+        }
         #endregion
+
+
         #region Query
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<Location> ListAllLocationss()
