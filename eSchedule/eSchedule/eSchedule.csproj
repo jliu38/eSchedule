@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\EmployeesControll.cs" />
+    <Compile Include="Entities\POCOs\EmployeeSkillDirectory.cs" />
     <Compile Include="BLL\ScheduleControll.cs" />
-    <Compile Include="DAL\ScheduleContext..cs" />
+    <Compile Include="DAL\ScheduleContext.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\EmployeeLocation.cs" />
     <Compile Include="Entities\EmployeeSkill.cs" />

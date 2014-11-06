@@ -31,7 +31,7 @@ namespace eSchedule.Entities
 
        public bool Active { get; set; }
 
-
+       public string FullName { get { return FirstName + " " + LastName; } }
        public virtual ICollection<EmployeeSkill> EmployeeSkill { get; set; }
    }
 }
